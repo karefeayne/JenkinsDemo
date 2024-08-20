@@ -9,12 +9,12 @@ pipeline {
             }
         }
 
-        stage('Deploy Frontend') {
-            steps {
-                script {
-                    withAWS(region: 'us-east-1', credentials: 'AWS_CREDENTIALS') {
-                        sh "aws s3 sync frontend/dist s3://boardgame-inventory-management"
-                    }
+        stage('Deploy Frontend'){
+            steps{
+                script{
+                      withAWS(region: 'us-east-1', credentials: 'AWS_CREDENTIALS'){
+                        sh "aws s3 sync frontend/dist s3://boardgame-inventory-management" 
+                        }   
                 }
             }
         }

@@ -16,7 +16,7 @@ pipeline {
 
         stage('testGitWebhook') {
             steps {
-                sh "echo TIt Works"
+                sh "echo It Works"
             }
         }
 

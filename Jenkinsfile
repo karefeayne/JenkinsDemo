@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     withAWS(region: 'us-east-1', credentials: 'AWS_CREDENTIALS') {
-                        sh "aws sync frontend/dist s3://boardgame-inventory-management"
+                        sh "aws s3 sync frontend/dist s3://boardgame-inventory-management"
                     }
                 }
             }
